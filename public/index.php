@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);       // устанавливает уровень отслеживаемых ошибок интерпретатором php
+ini_set('display_errors', 1); // дает команду интерпретатору php выводить все отслеживаемые ошибки в браузере
 
 use App\Kernel;
 use Symfony\Component\Debug\Debug;
@@ -6,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 require dirname(__DIR__).'/config/bootstrap.php';
 
-if ($_SERVER['APP_DEBUG']) {
+if (true || $_SERVER['APP_DEBUG']) {
     umask(0000);
 
     Debug::enable();
