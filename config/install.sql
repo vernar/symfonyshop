@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `les_symfonyshop`.`product` (
   `attributeset` INT NOT NULL ,
   `create_date` DATE NOT NULL ,
   `description` TEXT NOT NULL ,
+  `url_key` VARCHAR(200) NOT NULL ,
   `weight` INT NOT NULL ,
   `image` VARCHAR(50) NOT NULL ,
   PRIMARY KEY (`product_id`),
