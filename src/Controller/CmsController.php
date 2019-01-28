@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: dmitry
  * Date: 27.01.19
- * Time: 21:41
+ * Time: 23:44
  */
 
 namespace App\Controller;
@@ -12,13 +12,13 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ProductController extends Controller
+class CmsController extends Controller
 {
     /**
-     * @Route("/product/view/{urlKey}")
+     * @Route("/")
      */
-    public function viewAction($urlKey)
+    public function homepageAction()
     {
-        return $this->render('product.html.twig');
+        return $this->render('homepage.html.twig');
     }
 }
