@@ -15,11 +15,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryController extends Controller
 {
     /**
+     * @Route("/category")
+     */
+    public function defaultViewAction()
+    {
+        return $this->render('category.html.twig');
+    }
+
+    /**
      * @Route("/category/{catName}")
      */
     public function viewAction($catName)
     {
-
+        return $this->render('category.html.twig');
     }
 
     /**

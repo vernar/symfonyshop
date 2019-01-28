@@ -19,6 +19,7 @@ class CartController extends Controller
      */
     public function viewAction()
     {
+        return $this->render('cart.html.twig');
 
     }
 
