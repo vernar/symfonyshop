@@ -9,16 +9,28 @@
 namespace App\Controller;
 
 
+use App\Entity\Category;
+use App\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends Controller
 {
     /**
-     * @Route("/product/view/{urlKey}")
+     * @Route("/product/{urlKey}")
      */
     public function viewAction($urlKey)
     {
-        return $this->render('product.html.twig');
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findBy([],['sort_order' => 'ASC']);
+
+        $product = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->findOneBy(['url_key' => $urlKey]);
+        return $this->render('product.html.twig',[
+            'product' => $product,
+            'categories' => $categories,
+        ]);
     }
 }

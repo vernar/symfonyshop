@@ -37,12 +37,10 @@
 		<div class="container">
 			<div class="trigger"></div>
 			<ul>
-				<li><a href="/category/a">New collection</a></li>
-				<li><a href="/category/b">necklaces</a></li>
-				<li><a href="/category/c">earrings</a></li>
-				<li><a href="/category/d">Rings</a></li>
-				<li><a href="/category/e">Gift cards</a></li>
-				<li><a href="/category/f">Promotions</a></li>
+				{% for item in categories %}
+					<li><a href="/category/{{ item.categoryUrl }}">{{ item.name }}</a></li>
+				{% endfor %}
+
 			</ul>
 		</div>
 		<!-- / container -->

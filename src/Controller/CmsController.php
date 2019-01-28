@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,6 +20,12 @@ class CmsController extends Controller
      */
     public function homepageAction()
     {
-        return $this->render('homepage.html.twig');
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findBy([],['sort_order' => 'ASC']);
+
+        return $this->render('homepage.html.twig', [
+            'categories' => $categories,
+            ]);
     }
 }

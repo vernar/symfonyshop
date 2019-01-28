@@ -66,54 +66,14 @@
 				</aside>
 				<div id="content">
 					<section class="products">
+						{% for item in eavcollection %}
 						<article>
-							<a href="/product/view/a"><img src="/images/11.jpg" alt=""></a>
-							<h3><a href="/product/view/a">Lorem ipsum dolor</a></h3>
-							<h4><a href="/product/view/a">$990.00</a></h4>
+							<a href="/product/{{ item.product.urlKey }}"><img width="210px" height="227" src="/images/{{ item.product.image }}" alt=""></a>
+							<h3><a href="/product/{{ item.product.urlKey }}">{{ item.product.name }}</a></h3>
+							<h4><a href="/product/{{ item.product.urlKey }}">{{ item.product.price }}</a></h4>
 							<a href="/cart/view" class="btn-add">Add to cart</a>
 						</article>
-						<article>
-							<a href="/product/view/a"><img src="/images/12.jpg" alt=""></a>
-							<h3><a href="/product/view/a">cupidatat non proident</a></h3>
-							<h4><a href="/product/view/a">$1 200.00</a></h4>
-							<a href="/cart/view" class="btn-add">Add to cart</a>
-						</article>
-						<article>
-							<a href="/product/view/a"><img src="/images/13.jpg" alt=""></a>
-							<h3><a href="/product/view/a">Duis aute irure</a></h3>
-							<h4><a href="/product/view/a">$2 650.00</a></h4>
-							<a href="/cart/view" class="btn-add">Add to cart</a>
-						</article>
-						<article>
-							<a href="/product/view/a"><img src="/images/14.jpg" alt=""></a>
-							<h3><a href="/product/view/a">magna aliqua</a></h3>
-							<h4><a href="/product/view/a">$3 500.00</a></h4>
-							<a href="/cart/view" class="btn-add">Add to cart</a>
-						</article>
-						<article>
-							<a href="/product/view/a"><img src="/images/15.jpg" alt=""></a>
-							<h3><a href="/product/view/a">Lorem ipsum dolor</a></h3>
-							<h4><a href="/product/view/a">$1 500.00</a></h4>
-							<a href="/cart/view" class="btn-add">Add to cart</a>
-						</article>
-						<article>
-							<a href="/product/view/a"><img src="/images/1.jpg" alt=""></a>
-							<h3><a href="/product/view/a">cupidatat non proident</a></h3>
-							<h4><a href="/product/view/a">$3 200.00</a></h4>
-							<a href="/cart/view" class="btn-add">Add to cart</a>
-						</article>
-						<article>
-							<a href="/product/view/a"><img src="/images/16.jpg" alt=""></a>
-							<h3><a href="/product/view/a">Duis aute irure</a></h3>
-							<h4><a href="/product/view/a">$2 650.00</a></h4>
-							<a href="/cart/view" class="btn-add">Add to cart</a>
-						</article>
-						<article>
-							<a href="/product/view/a"><img src="/images/17.jpg" alt=""></a>
-							<h3><a href="/product/view/a">magna aliqua</a></h3>
-							<h4><a href="/product/view/a">$3 500.00</a></h4>
-							<a href="/cart/view" class="btn-add">Add to cart</a>
-						</article>
+                        {% endfor %}
 					</section>
 				</div>
 				<!-- / content -->
