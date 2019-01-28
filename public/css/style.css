@@ -870,7 +870,8 @@ h1 {
 }
 
 .product .image img {
-	width: 100%;
+	width: 600px;
+	height: 560px;
 }
 
 .product .details {
