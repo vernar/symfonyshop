@@ -19,6 +19,16 @@ class CustomerRepository extends ServiceEntityRepository
         parent::__construct($registry, Customer::class);
     }
 
+    public function checkEmailDuplication($userId, $email)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.email = :email')
+            ->andWhere('c.id != :id')
+            ->setParameters(['id' => $userId, 'email' => $email])
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
     // /**
     //  * @return Customer[] Returns an array of Customer objects
     //  */

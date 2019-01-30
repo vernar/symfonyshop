@@ -1,0 +1,30 @@
+{% extends 'customer/base-customer.html.twig' %}
+{% block title %} {{ parent() }} Cart{% endblock %}
+
+{% block breadcrumbs %}
+    {{ parent() }}
+     <li>Cart</li>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <div class="col-md-9 order-content">
+        <div class="form_main col-md-4 col-sm-5 col-xs-7">
+            <h4 class="heading"><strong>Personal </strong> Contact <span></span></h4>
+            <div class="form">
+                <form class="form-signin" action="" method="post" id="contactFrm" name="contactFrm">
+                    <label for="inputName" >Change Name</label>
+                    <input value="{{ customer.firstname }}" type="text" name="name" id="inputText" class="form-control text" placeholder="name" >
+                    <label for="inputEmail" >Change email</label>
+                    <input value="{{ customer.email }}" type="email" name="email" id="inputEmail" class="form-control text" placeholder="Email address"  >
+                    <label for="inputPassword" >Enter new password</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control text" placeholder="Password" >
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+{% endblock %}

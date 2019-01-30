@@ -16,7 +16,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 *, *:before, *:after {
@@ -267,6 +267,7 @@ a:hover {
 	font-size: 14px;
 	overflow: hidden;
 	padding: 12px 0;
+	text-transform: uppercase;
 }
 
 #breadcrumbs li {
@@ -279,11 +280,12 @@ a:hover {
 
 #breadcrumbs li + li:before {
 	content: "";
-	margin: 13px 13px 0 15px;
+	margin: 8px 13px 0 15px;
 	float: left;
 	background: url(../images/ico_arrow.png) no-repeat;
 	width: 9px;
 	height: 5px;
+
 }
 
 #body {

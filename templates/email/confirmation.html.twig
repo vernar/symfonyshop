@@ -1,0 +1,8 @@
+<h3>Thank you for registration!</h3>
+
+Hi ! You're successfully registered.
+
+{# example, assuming you have a route named "login" #}
+To finish registration please follow to link:  {{ "%s/confirmation/%s" |format ( app.request.uri, user.token) }} .
+
+Thanks!

@@ -30,13 +30,13 @@ class CategoryController extends Controller
             return $this->redirect('/');
         }
 
-        $categories = $this->getDoctrine()
-            ->getRepository(Category::class)
-            ->findBy([],['sort_order' => 'ASC']);
-
         $EavCollection = $this->getDoctrine()
             ->getRepository(EavProductCategories::class)
             ->findBy(['category' => $currentCategory->getId()]);
+
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findBy([],['sort_order' => 'ASC']);
 
         return $this->render('category.html.twig', [
             'eavcollection' => $EavCollection,

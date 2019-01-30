@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() }} Customer Account {% endblock %}
+{% block breadcrumbs %}
+    <li><a href="{{ path('app_account') }}">Customer Account</a></li>
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
+                        <!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
+
+
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            <span class="hidden-xs">Hareesh Vudari</span>
+                        </div>
+                        <div class="profile-usertitle-job">
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                    <!-- SIDEBAR MENU -->
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li {% if tab == 'info' %}class="active"{% endif %}>
+                                <a href="/customer/account/info">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    <span class="hidden-xs">Personal</span> </a>
+                            </li>
+                            <li {% if tab == 'address' %}class="active"{% endif %}>
+                                <a href="/customer/account/address">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    <span class="hidden-xs">Address</span> </a>
+                            </li>
+                            <li {% if tab == 'orders' %}class="active"{% endif %}>
+                                <a href="/customer/account/orders">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                    <span class="hidden-xs">Orders </span></a>
+                            </li>
+                            <li {% if tab == 'cart' %}class="active"{% endif %}>
+                                <a href="/customer/account/cart">
+                                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    <span class="hidden-xs">Shopping Bag</span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
+                </div>
+            </div>
+
+
+
+{% endblock %}

@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CmsController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_homepage")
      */
     public function homepageAction()
     {
