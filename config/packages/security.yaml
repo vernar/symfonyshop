@@ -1,13 +1,51 @@
 security:
+    encoders:
+        App\Entity\Customer:
+            algorithm: bcrypt
+        App\Entity\AdminUser:
+            algorithm: bcrypt
+
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: ~ }
+        # used to reload user from session & other features (e.g. switch_user)
+        customer_user_provider:
+            entity:
+                class: App\Entity\Customer
+                property: email
+        admin_user_provider:
+            entity:
+                class: App\Entity\AdminUser
+                property: email
+        # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        admin:
+            anonymous: true
+            pattern: ^/admin
+            context: backend
+            access_denied_url: /admin/login
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAdminAuthenticator
+            logout:
+                path: app_admin_logout
         main:
             anonymous: true
+            access_denied_url: /login
+            context: frontend
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+            form_login:
+                login_path: /login
+            logout:
+                path: app_logout
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 2592000 # 30 days in seconds
 
             # activate different ways to authenticate
 
@@ -20,5 +58,7 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/customer, roles: ROLE_USER }
+        - { path: ^/admin/dashboard, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+    #access_denied_url: /login

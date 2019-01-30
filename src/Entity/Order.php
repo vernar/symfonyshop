@@ -20,7 +20,7 @@ class Order
      * @ORM\ManyToOne(targetEntity="App\Entity\Customer", inversedBy="orders")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $customer_id;
+    private $customerId;
 
     /**
      * @ORM\Column(type="integer")
@@ -54,12 +54,12 @@ class Order
 
     public function getCustomerId(): ?Customer
     {
-        return $this->customer_id;
+        return $this->customerId;
     }
 
-    public function setCustomerId(?Customer $customer_id): self
+    public function setCustomerId(?Customer $customerId): self
     {
-        $this->customer_id = $customer_id;
+        $this->customerId = $customerId;
 
         return $this;
     }

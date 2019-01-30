@@ -14,20 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LoginController extends Controller
 {
-    /**
-     * @Route("/admin/login")
-     */
-    public function loginAction()
-    {
 
-    }
-
-    /**
-     * @Route("/admin/logout")
-     */
-    public function logoutAction()
-    {
-
-    }
 
 }
